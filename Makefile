@@ -4,10 +4,37 @@ BOOTSTRAP_RESPONSIVE = ./docs/assets/css/bootstrap-responsive.css
 BOOTSTRAP_RESPONSIVE_LESS = ./less/responsive.less
 LESS_COMPRESSOR ?= `which lessc`
 WATCHR ?= `which watchr`
+CADENCE=../public
 
 #
 # BUILD DOCS
 #
+cadence: cclean bslite
+	cp bootstrap/css/* ${CADENCE}/css/
+	cp bootstrap/js/bootstrap.min.js ${CADENCE}/js/
+	cp bootstrap/img/* ${CADENCE}/img/
+	rm -r bootstrap
+
+cadev: cclean bootstrap
+	cp bootstrap/js/bootstrap.min.js ${CADENCE}/js/bootstrap.min.js
+	rm -r bootstrap
+	lessc ${BOOTSTRAP_LESS} > ${CADENCE}/css/bootstrap.css
+	cp img/* ${CADENCE}/img/
+	cp js/*.js ${CADENCE}/js/
+
+cclean:
+	rm ${CADENCE}/css/* ${CADENCE}/js/* ${CADENCE}/img/*
+
+bslite:
+	mkdir -p bootstrap/img
+	mkdir -p bootstrap/css
+	mkdir -p bootstrap/js
+	cp img/* bootstrap/img/
+	lessc --compress ${BOOTSTRAP_LESS} > bootstrap/css/bootstrap.min.css
+	cat js/bootstrap-transition.js js/bootstrap-alert.js js/bootstrap-button.js js/bootstrap-carousel.js js/bootstrap-collapse.js js/bootstrap-dropdown.js js/bootstrap-modal.js js/bootstrap-tooltip.js js/bootstrap-popover.js js/bootstrap-scrollspy.js js/bootstrap-tab.js js/bootstrap-typeahead.js > bootstrap/js/bootstrap.js
+	uglifyjs -nc bootstrap/js/bootstrap.js > bootstrap/js/bootstrap.min.tmp.js
+	echo "/**\n* Bootstrap.js by @fat & @mdo\n* Copyright 2012 Twitter, Inc.\n* http://www.apache.org/licenses/LICENSE-2.0.txt\n*/" > bootstrap/js/copyright.js
+	cat bootstrap/js/copyright.js bootstrap/js/bootstrap.min.tmp.js > bootstrap/js/bootstrap.min.js
 
 docs: bootstrap
 	rm docs/assets/bootstrap.zip
