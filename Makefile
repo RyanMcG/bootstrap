@@ -1,5 +1,5 @@
 BOOTSTRAP = ./docs/assets/css/bootstrap.css
-BOOTSTRAP_LESS = ./less/bootstrap.less
+BOOTSTRAP_LESS = ./less/cadence.less
 BOOTSTRAP_RESPONSIVE = ./docs/assets/css/bootstrap-responsive.css
 BOOTSTRAP_RESPONSIVE_LESS = ./less/responsive.less
 LESS_COMPRESSOR ?= `which lessc`
@@ -13,17 +13,17 @@ cadence: cclean bslite
 	cp bootstrap/css/* ${CADENCE}/css/
 	cp bootstrap/js/bootstrap.min.js ${CADENCE}/js/
 	cp bootstrap/img/* ${CADENCE}/img/
-	rm -r bootstrap
+	rm -rf bootstrap
 
 cadev: cclean bootstrap
 	cp bootstrap/js/bootstrap.min.js ${CADENCE}/js/bootstrap.min.js
 	lessc ${BOOTSTRAP_LESS} > ${CADENCE}/css/bootstrap.css
-	rm -r bootstrap
+	rm -rf bootstrap
 	cp img/* ${CADENCE}/img/
 	cp js/*.js ${CADENCE}/js/
 
 cclean:
-	rm ${CADENCE}/css/bootstrap*.css ${CADENCE}/js/bootstrap*.js \
+	rm -f ${CADENCE}/css/bootstrap*.css ${CADENCE}/js/bootstrap*.js \
 		${CADENCE}/img/glyphicons-halflings*.png
 
 bslite:
