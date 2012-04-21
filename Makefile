@@ -17,13 +17,14 @@ cadence: cclean bslite
 
 cadev: cclean bootstrap
 	cp bootstrap/js/bootstrap.min.js ${CADENCE}/js/bootstrap.min.js
-	rm -r bootstrap
 	lessc ${BOOTSTRAP_LESS} > ${CADENCE}/css/bootstrap.css
+	rm -r bootstrap
 	cp img/* ${CADENCE}/img/
 	cp js/*.js ${CADENCE}/js/
 
 cclean:
-	rm ${CADENCE}/css/* ${CADENCE}/js/* ${CADENCE}/img/*
+	rm ${CADENCE}/css/bootstrap*.css ${CADENCE}/js/bootstrap*.js \
+		${CADENCE}/img/glyphicons-halflings*.png
 
 bslite:
 	mkdir -p bootstrap/img
@@ -85,6 +86,10 @@ gh-pages: docs
 watch:
 	echo "Watching less files..."; \
 	watchr -e "watch('less/.*\.less') { system 'make' }"
+
+dwatch:
+	echo "[DEV] Watching less files..."; \
+	watchr -e "watch('less/.*\.less') { system 'make cadev' }"
 
 
 .PHONY: docs watch gh-pages
