@@ -20,7 +20,7 @@
   padding-right: 20px;
   #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
   .border-radius(4px);
-  @shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
+  @shadow: 0 0 13px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
   .box-shadow(@shadow);
 }
 
@@ -64,17 +64,18 @@
   // Hover and active states
   .brand:hover {
     text-decoration: none;
+    color: @white;
   }
   // Website or project name
   .brand {
     float: left;
     display: block;
-    padding: 8px 20px 12px;
+    padding: 14px 20px 14px 30px;
     margin-left: -20px; // negative indent to left-align the text down the page
-    font-size: 20px;
-    font-weight: 200;
+    font-size: 22px;
+    font-weight: 400;
     line-height: 1;
-    color: @white;
+    color: lighten(@purple, 45%);
   }
   // Plain text in topbar
   .navbar-text {
@@ -218,8 +219,8 @@
 // Links
 .navbar .nav > li > a {
   float: none;
-  padding: 10px 10px 11px;
-  line-height: 19px;
+  padding: 10px 20px 11px;
+  line-height: 29px;
   color: @navbarLinkColor;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0,0,0,.25);

@@ -10,13 +10,13 @@
 
 // Grays
 // -------------------------
-@black:                 #111;
-@grayDarker:            #222;
+@black:                 #000;
+@grayDarker:            #111;
 @grayDark:              #333;
 @gray:                  #555;
 @grayLight:             #999;
 @grayLighter:           #eee;
-@white:                 #f6f6f6;
+@white:                 #ffffff;
 
 
 // Accent colors
@@ -33,14 +33,14 @@
 
 // Scaffolding
 // -------------------------
-@bodyBackground:        @white;
+@bodyBackground:        darken(@white, 1%);
 @textColor:             @grayDark;
 
 
 // Links
 // -------------------------
-@linkColor:             #08c;
-@linkColorHover:        darken(@linkColor, 15%);
+@linkColor:             lighten(spin(@purple, 1%), 2%);
+@linkColorHover:        darken(@linkColor, 20%);
 
 
 // Typography
@@ -139,12 +139,12 @@
 
 // Navbar
 // -------------------------
-@navbarHeight:                    40px;
-@navbarBackground:                @grayDarker;
-@navbarBackgroundHighlight:       @grayDark;
+@navbarHeight:                    50px;
+@navbarBackground:                @purple;
+@navbarBackgroundHighlight:       lighten(@purple, 5%);
 
-@navbarText:                      @grayLight;
-@navbarLinkColor:                 @grayLight;
+@navbarText:                      lighten(@navbarBackground, 35%);
+@navbarLinkColor:                 lighten(@navbarBackground, 40%);
 @navbarLinkColorHover:            @white;
 @navbarLinkColorActive:           @navbarLinkColorHover;
 @navbarLinkBackgroundHover:       transparent;
@@ -158,7 +158,7 @@
 
 // Hero unit
 // -------------------------
-@heroUnitBackground:              @grayLighter;
+@heroUnitBackground:              lighten(@purple, 50%);
 @heroUnitHeadingColor:            inherit;
 @heroUnitLeadColor:               inherit;
 

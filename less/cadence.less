@@ -4,8 +4,18 @@
 
 @import "bootstrap.less";
 
-div#site-title.nav {
-  margin: 0;
+div#navbar.navbar {
+  @shadow: 0 0 32px rgba(0,0,0,.15), inset 0 -1px 0 rgba(0,0,0,.1);
+  .box-shadow(@shadow);
+  font-size: 15px;
+
+  top: 16px;
+  i.icon-white {
+    margin-top: 1px;
+  }
+  b.caret {
+    margin-top: 13px;
+  }
 }
 
 .form-actions {
