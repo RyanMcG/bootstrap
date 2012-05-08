@@ -1,30 +1,30 @@
 BOOTSTRAP = ./docs/assets/css/bootstrap.css
-BOOTSTRAP_LESS = ./less/cadence.less
+BOOTSTRAP_LESS = ./less/sscs.less
 BOOTSTRAP_RESPONSIVE = ./docs/assets/css/bootstrap-responsive.css
 BOOTSTRAP_RESPONSIVE_LESS = ./less/responsive.less
 LESS_COMPRESSOR ?= `which lessc`
 WATCHR ?= `which watchr`
-CADENCE=../public
+SSCS=../public
 
 #
 # BUILD DOCS
 #
-cadence: cclean bslite
-	cp bootstrap/css/* ${CADENCE}/css/
-	cp bootstrap/js/bootstrap.min.js ${CADENCE}/js/
-	cp bootstrap/img/* ${CADENCE}/img/
+sscs: clean bslite
+	cp bootstrap/css/* ${SSCS}/stylesheets/
+	cp bootstrap/js/bootstrap.min.js ${SSCS}/javascripts/
+	cp bootstrap/img/* ${SSCS}/images/
 	rm -rf bootstrap
 
-cadev: cclean bootstrap
-	cp bootstrap/js/bootstrap.min.js ${CADENCE}/js/bootstrap.min.js
-	lessc ${BOOTSTRAP_LESS} > ${CADENCE}/css/bootstrap.css
+sscsdev: clean bootstrap
+	cp bootstrap/js/bootstrap.min.js ${SSCS}/javascripts/bootstrap.min.js
+	lessc ${BOOTSTRAP_LESS} > ${SSCS}/stylesheets/sscs.css
 	rm -rf bootstrap
-	cp img/* ${CADENCE}/img/
-	cp js/*.js ${CADENCE}/js/
+	cp img/* ${SSCS}/images/
+	cp js/*.js ${SSCS}/javascripts/
 
-cclean:
-	rm -f ${CADENCE}/css/bootstrap*.css ${CADENCE}/js/bootstrap*.js \
-		${CADENCE}/img/glyphicons-halflings*.png
+clean:
+	rm -f ${SSCS}/stylesheets/bootstrap*.css ${SSCS}/javascripts/bootstrap*.js \
+		${SSCS}/images/glyphicons-halflings*.png
 
 bslite:
 	mkdir -p bootstrap/img
