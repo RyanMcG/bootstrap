@@ -1,0 +1,35 @@
+// Import some fonts
+@import url("http://fonts.googleapis.com/css?family=Dosis:400,500|Comfortaa:400,700");
+
+// Use variables from bootstrap
+@import "variables.less";
+
+@bgColor: desaturate(lighten(@linkColor, 44%), 4%);
+
+body {
+  font-family: @baseFontFamily;
+  font-size: @baseFontSize;
+  font-weight: @baseFontWeight;
+  line-height: @baseLineHeight;
+  background-color: @bgColor;
+}
+
+table tbody {
+  td.docs {
+    padding-right: 13px;
+    padding-left: 27px;
+  }
+
+  td.codes {
+    background-color: @bgColor;
+  }
+}
+
+h1.project-name {
+  font-size: 32px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: @altFontFamily;
+  line-height: 1.2em;
+}
