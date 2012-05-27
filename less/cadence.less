@@ -17,7 +17,7 @@ div#navbar.navbar {
   }
   .brand {
     background: 4px 50% no-repeat url("/img/cadence-30.png");
-    padding: 11px 12px 11px 42px;
+    padding: 11px 11px 11px 42px;
     font-size: 28px;
   }
 }
@@ -27,24 +27,42 @@ div#navbar.navbar {
   margin-top: 3px;
 }
 
-div#train_well .row-fluid .input-xlarge {
-  font-size: 1.8em;
-  line-height: 1.2em;
-  height: 1.2em;
-  @padding: .5%;
-  padding-left: @padding;
-  padding-right: @padding;
-  width: 100% - 2 * @padding;
+div#train_well.well, div#auth_well.well {
+  .row-fluid .input-xlarge {
+    font-size: 1.8em;
+    line-height: 1.2em;
+    height: 1.2em;
+    @padding: .5%;
+    padding-left: @padding;
+    padding-right: @padding;
+    width: 100% - 2 * @padding;
+  }
+
+  input.phrase {
+    margin-bottom: 0;
+  }
 }
 
-div#training-phrase.span12 {
+div#auth_well.well {
+  div#feedback {
+    div.alert {
+      margin: 0;
+    }
+  }
+}
+
+div#given-phrase {
   width: auto;
+}
+
+form#authenticate.row-fluid {
+  margin: 0;
 }
 
 div#completion {
   .progress {
     margin-bottom: 0;
-    margin-top: 4px;
+    margin-top: 8px;
     height: 29px;
     .bar {
       height: 29px;
