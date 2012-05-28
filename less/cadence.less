@@ -102,3 +102,14 @@ footer#footer.footer {
     text-align: center;
   }
 }
+
+@media (min-width: 980px) {
+  .anchor {
+    @anchorMargin: 72px;
+    border-top: @anchorMargin solid transparent;
+    margin-top: -1 * @anchorMargin;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+  }
+}
