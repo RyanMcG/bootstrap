@@ -27,6 +27,14 @@ div#navbar.navbar {
   margin-top: 3px;
 }
 
+#navbar .container-fluid, #main.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#navbar .container-fluid {
+  padding-right: 0;
+}
+
 div#train_well.well, div#auth_well.well {
   .row-fluid .input-xlarge {
     font-size: 1.8em;
@@ -111,5 +119,16 @@ footer#footer.footer {
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding;
     background-clip: padding-box;
+  }
+}
+
+// Profile Styles
+div.page-header.username {
+  h1 {
+    @padding-top: 16px;
+    line-height: 50px - @padding-top;
+    padding-top: @padding-top;
+    margin-right: .5em;
+    float: left;
   }
 }
