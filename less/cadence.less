@@ -125,10 +125,68 @@ footer#footer.footer {
 // Profile Styles
 div.page-header.username {
   h1 {
-    @padding-top: 16px;
+    @padding-top: 17px;
     line-height: 50px - @padding-top;
     padding-top: @padding-top;
     margin-right: .5em;
     float: left;
+  }
+}
+
+#profile {
+  h2 {
+    margin-bottom: .65em;
+    line-height: 1em
+  }
+  table {
+    .table;
+    .table-striped;
+  }
+}
+
+.phrase-headers {
+  line-height: 1.8em;
+  font-family: @altFontFamily;
+  border-bottom: 1px solid @tableBorder;
+  font-weight: bold;
+
+  @headerItemMargin: .3em;
+
+  div {
+    margin: @headerItemMargin 0 0 0;
+  }
+  div:first-child {
+    font-size: 1.6em;
+    margin: 0 0 @headerItemMargin 0;
+  }
+}
+
+.phrase-header {
+  font-size: 1.1em;
+  line-height: 2.6em;
+  cursor: pointer;
+  border: 1px solid #eeeeee;
+
+  span.quote {
+    color: darken(@purple, 8%);
+  }
+
+  em.phrase {
+    background: @heroUnitBackground;
+    color: darken(@purple, 8%);
+    .border-radius(6px);
+    padding: .3em .5em;
+
+    &:hover {
+      background: lighten(@navbarBackgroundHighlight, 6%);
+      color: @white;
+    }
+  }
+
+  .quote {
+    margin: 0 0 0 .2em;
+  }
+  .quote:first-child {
+    margin: 0 .2em 0 0;
   }
 }
