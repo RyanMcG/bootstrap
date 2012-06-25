@@ -165,7 +165,7 @@ div.page-header.username {
   font-size: 1.1em;
   line-height: 2.6em;
   cursor: pointer;
-  border: 1px solid #eeeeee;
+  border-top: 1px solid #eeeeee;
 
   span.quote {
     color: darken(@purple, 8%);
@@ -176,11 +176,6 @@ div.page-header.username {
     color: darken(@purple, 8%);
     .border-radius(6px);
     padding: .3em .5em;
-
-    &:hover {
-      background: lighten(@navbarBackgroundHighlight, 6%);
-      color: @white;
-    }
   }
 
   .quote {
@@ -188,5 +183,10 @@ div.page-header.username {
   }
   .quote:first-child {
     margin: 0 .2em 0 0;
+  }
+
+  &:hover em.phrase {
+      background: lighten(@navbarBackgroundHighlight, 6%);
+      color: @white;
   }
 }
