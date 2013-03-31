@@ -4,59 +4,10 @@
 
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,500|Comfortaa:400,700");
 @import-once "bootstrap.less";
-@import-once "cadence/migrations.less";
-@import-once "cadence/admin-bar.less";
-@import-once "cadence/nav.less";
 
 [class^=icon-] {
   // This is necessary for the Ubuntu font
   margin-top: 3px;
-}
-
-div#train_well.well, div#auth_well.well {
-  .row-fluid .input-xlarge {
-    font-size: 1.8em;
-    line-height: 1.2em;
-    height: 1.2em;
-    @padding: .5%;
-    padding-left: @padding;
-    padding-right: @padding;
-    width: 100% - 2 * @padding;
-  }
-
-  input.phrase {
-    margin-bottom: 0;
-  }
-}
-
-div#auth_well.well {
-  div#feedback {
-    div.alert {
-      margin: @baseLineHeight 0 0;
-    }
-  }
-}
-
-div#given-phrase {
-  width: auto;
-}
-
-form#authenticate.row-fluid {
-  margin: 0;
-}
-
-div#completion {
-  .progress {
-    margin-bottom: 0;
-    margin-top: 8px;
-    height: 29px;
-    .bar {
-      height: 29px;
-    }
-  }
-  a.btn {
-    display: block;
-  }
 }
 
 .form-actions {
@@ -100,71 +51,8 @@ footer#footer.footer {
   }
 }
 
-// Profile Styles
-div.page-header.username {
-  h1 {
-    @padding-top: 17px;
-    line-height: 50px - @padding-top;
-    padding-top: @padding-top;
-    margin-right: .5em;
-    float: left;
-  }
-}
-
-#profile {
-  h2 {
-    margin-bottom: .65em;
-    line-height: 1em
-  }
-  table {
-    .table;
-    .table-striped;
-  }
-}
-
-.phrase-headers {
-  line-height: 1.8em;
-  font-family: @altFontFamily;
-  border-bottom: 1px solid @tableBorder;
-  font-weight: bold;
-
-  @headerItemMargin: .3em;
-
-  div {
-    margin: @headerItemMargin 0 0 0;
-  }
-  div:first-child {
-    font-size: 1.6em;
-    margin: 0 0 @headerItemMargin 0;
-  }
-}
-
-.phrase-header {
-  font-size: 1.1em;
-  line-height: 2.6em;
-  cursor: pointer;
-  border-top: 1px solid #eeeeee;
-
-  span.quote {
-    color: darken(@purple, 8%);
-  }
-
-  em.phrase {
-    background: @heroUnitBackground;
-    color: darken(@purple, 8%);
-    .border-radius(6px);
-    padding: .3em .5em;
-  }
-
-  .quote {
-    margin: 0 0 0 .2em;
-  }
-  .quote:first-child {
-    margin: 0 .2em 0 0;
-  }
-
-  &:hover em.phrase {
-    background: lighten(@navbarBackgroundHighlight, 6%);
-    color: @white;
-  }
-}
+@import-once "cadence/nav.less";
+@import-once "cadence/admin-bar.less";
+@import-once "cadence/auth.less";
+@import-once "cadence/profile.less";
+@import-once "cadence/migrations.less";
