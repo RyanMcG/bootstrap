@@ -1,0 +1,26 @@
+@import-once "../bootstrap.less";
+
+div#navbar.navbar {
+  @shadow: 0 0 32px rgba(0,0,0,.15), inset 0 -1px 0 rgba(0,0,0,.1);
+  .box-shadow(@shadow);
+  font-size: 15px;
+
+  top: 16px;
+  b.caret {
+    margin-top: 13px;
+  }
+  .brand {
+    background: 4px 50% no-repeat url("/img/cadence-30.png");
+    padding: 11px 11px 11px 42px;
+    font-size: 28px;
+  }
+}
+
+#navbar .container-fluid, #main.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#navbar .container-fluid {
+  padding-right: 0;
+}
