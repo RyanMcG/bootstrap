@@ -2,97 +2,104 @@
  * Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
  */
 
-@sol_0: #002b36;
-@sol_1: #839496;
-@sol_2: #586e75;
-@sol_3: #859900;
-@sol_4: #2aa198;
-@sol_5: #268bd2;
-@sol_6: #b58900;
-@sol_7: #cb4b16;
-@sol_8: #dc322f;
-@sol_9: #073642;
+pre {
+  @sol_0: #002b36;
+  @sol_1: #839496;
+  @sol_2: #586e75;
+  @sol_3: #859900;
+  @sol_4: #2aa198;
+  @sol_5: #268bd2;
+  @sol_6: #b58900;
+  @sol_7: #cb4b16;
+  @sol_8: #dc322f;
+  @sol_9: #073642;
 
-pre code {
-  display: block; padding: 0.5em;
-  background: @sol_0;
-  color: @sol_1;
-}
+  code {
+    display: block; padding: 0.5em;
+    background: @sol_0;
+    color: @sol_1;
+  }
 
-pre .comment,
-pre .template_comment,
-pre .diff .header,
-pre .doctype,
-pre .pi,
-pre .lisp .string,
-pre .javadoc {
-  color: @sol_2;
-  font-style: italic;
-}
+  .clojure .title {
+    color: @sol_1;
+  }
 
-pre .keyword,
-pre .winutils,
-pre .method,
-pre .addition,
-pre .css .tag,
-pre .request,
-pre .status,
-pre .nginx .title {
-  color: @sol_3;
-}
+  .comment,
+  .template_comment,
+  .diff .header,
+  .doctype,
+  .pi,
+  .lisp .string,
+  .javadoc {
+    color: @sol_2;
+    font-style: italic;
+  }
 
-pre .number,
-pre .command,
-pre .string,
-pre .tag .value,
-pre .phpdoc,
-pre .tex .formula,
-pre .regexp,
-pre .hexcolor {
-  color: @sol_4;
-}
+  .keyword,
+  .clojure .attribute,
+  .winutils,
+  .method,
+  .addition,
+  .css .tag,
+  .request,
+  .status,
+  .nginx .title {
+    color: @sol_3;
+  }
 
-pre .title,
-pre .localvars,
-pre .chunk,
-pre .decorator,
-pre .built_in,
-pre .identifier,
-pre .vhdl .literal,
-pre .id {
-  color: @sol_5;
-}
+  .number,
+  .command,
+  .string,
+  .tag .value,
+  .phpdoc,
+  .tex .formula,
+  .regexp,
+  .hexcolor {
+    color: @sol_4;
+  }
 
-pre .attribute,
-pre .variable,
-pre .lisp .body,
-pre .smalltalk .number,
-pre .constant,
-pre .class .title,
-pre .parent,
-pre .haskell .type {
-  color: @sol_6;
-}
+  .title,
+  .localvars,
+  .chunk,
+  .decorator,
+  .built_in,
+  .identifier,
+  .literal,
+  .id {
+    color: @sol_5;
+  }
 
-pre .preprocessor,
-pre .preprocessor .keyword,
-pre .shebang,
-pre .symbol,
-pre .symbol .string,
-pre .diff .change,
-pre .special,
-pre .attr_selector,
-pre .important,
-pre .subst,
-pre .cdata,
-pre .clojure .title {
-  color: @sol_7;
-}
+  .attribute,
+  .variable,
+  .lisp .body,
+  .smalltalk .number,
+  .constant,
+  .class .title,
+  .parent,
+  .haskell .type {
+    color: @sol_6;
+  }
 
-pre .deletion {
-  color: @sol_8;
-}
+  .preprocessor,
+  .preprocessor .keyword,
+  .shebang,
+  .symbol,
+  .symbol .string,
+  .diff .change,
+  .special,
+  .attr_selector,
+  .important,
+  .subst,
+  .cdata {
+    color: @sol_7;
+  }
 
-pre .tex .formula {
-  background: @sol_9;
+  .collection,
+  .deletion {
+    color: @sol_8;
+  }
+
+  .tex .formula {
+    background: @sol_9;
+  }
 }
