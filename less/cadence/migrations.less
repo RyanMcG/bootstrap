@@ -1,21 +1,22 @@
-table#migrations {
-
-  td {
-    vertical-align: middle;
-    &.controls {
-      width: 10%;
-    }
-    &.applied {
-      width: 10%;
-    }
-    &.doc {
-      width: 30%;
-    }
-  }
-  p {
-    margin: 0;
+#migrations {
+  code {
+    max-height: 4 * 1.4em + 1.2em;
+    overflow-x: auto;
   }
   button {
     width: 100%;
+  }
+
+  .migration {
+    @spacing: .8em;
+    padding: @spacing @spacing .2em;
+    border: 1px solid #eee;
+    margin-bottom: @spacing;
+    .border-radius(6px);
+  }
+
+  .applied {
+    text-align: center;
+    margin-top: .8em;
   }
 }
