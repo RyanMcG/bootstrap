@@ -1,3 +1,5 @@
+@spacing: .6em;
+
 #migrations {
   code {
     max-height: 4 * 1.4em + 1.2em;
@@ -8,15 +10,44 @@
   }
 
   .migration {
-    @spacing: .8em;
-    padding: @spacing @spacing .2em;
+    padding: @spacing @spacing 0.2em;
     border: 1px solid #eee;
     margin-bottom: @spacing;
     .border-radius(6px);
   }
 
-  .applied {
-    text-align: center;
-    margin-top: .8em;
+  .well {
+    padding: (@spacing - 0.6em) @spacing;
+    margin-bottom: @spacing - 0.1em;
   }
+
+  .migration-title {
+    margin-bottom: @spacing;
+    border-bottom: dashed 3px #eeeeee;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+  }
+
+  .controls {
+    margin-bottom: @spacing - 0.2em;
+  }
+}
+
+.meta-table {
+  font-size: .9em;
+  .name {
+    text-align: right;
+    font-weight: 700;
+  }
+  .name:after {
+    content: ": ";
+  }
+  .value {
+  }
+  p {
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+  margin-bottom: @spacing + 0.2em;
 }
